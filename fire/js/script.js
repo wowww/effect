@@ -14,7 +14,7 @@ let config = {
   CURL: 30,
   SPLAT_RADIUS: 0.5,
   SHADING: false,
-  COLORFUL: false,
+  COLORFUL: true,
   PAUSED: false,
   BACK_COLOR: {
     r: 2,
