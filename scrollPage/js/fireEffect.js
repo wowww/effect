@@ -1377,18 +1377,18 @@ canvas.addEventListener("mousemove", (e) => {
   pointers[0].y = e.offsetY;
 });
 
-canvas.addEventListener('touchmove', e => {
-    e.preventDefault();
-    const touches = e.targetTouches;
-    for (let i = 0; i < touches.length; i++) {
-        let pointer = pointers[i];
-        pointer.moved = pointer.down;
-        pointer.dx = (touches[i].pageX - pointer.x) * 8.0;
-        pointer.dy = (touches[i].pageY - pointer.y) * 8.0;
-        pointer.x = touches[i].pageX;
-        pointer.y = touches[i].pageY;
-    }
-}, false);
+// canvas.addEventListener('touchmove', e => {
+//     e.preventDefault();
+//     const touches = e.targetTouches;
+//     for (let i = 0; i < touches.length; i++) {
+//         let pointer = pointers[i];
+//         pointer.moved = pointer.down;
+//         pointer.dx = (touches[i].pageX - pointer.x) * 8.0;
+//         pointer.dy = (touches[i].pageY - pointer.y) * 8.0;
+//         pointer.x = touches[i].pageX;
+//         pointer.y = touches[i].pageY;
+//     }
+// }, false);
 
 canvas.addEventListener("mousedown", () => {
   pointers[0].down = true;
