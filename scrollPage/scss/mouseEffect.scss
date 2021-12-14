@@ -1,5 +1,8 @@
 @import 'reset';
 
+$theBallTrans: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$zoomScale: scale(2);
+
 #wrap {
   .theBall,
   .theBall-outer {
@@ -18,20 +21,20 @@
       position: absolute;
       background-color: rgba(255, 114, 114, 0.8);
       border-radius: 50%;
-      -webkit-transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      -moz-transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      -ms-transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      -o-transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -webkit-transition: $theBallTrans;
+      -moz-transition: $theBallTrans;
+      -ms-transition: $theBallTrans;
+      -o-transition: $theBallTrans;
+      transition: $theBallTrans;
       transform-origin: center center;
       
       .zooming.theBall {
         background-color: #ff7272;
-        -webkit-transform: scale(2);
-        -moz-transform: scale(2);
-        -ms-transform: scale(2);
-        -o-transform: scale(2);
-        transform: scale(2);
+        -webkit-transform: $zoomScale;
+        -moz-transform: $zoomScale;
+        -ms-transform: $zoomScale;
+        -o-transform: $zoomScale;
+        transform: $zoomScale;
       }
     }
   }
