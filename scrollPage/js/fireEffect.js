@@ -11,6 +11,7 @@ const canvas = document.getElementsByTagName("canvas")[0];
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
+
 let config = {
   SIM_RESOLUTION: 128,
   DYE_RESOLUTION: 512,
@@ -185,16 +186,6 @@ function supportRenderTextureFormat(gl, internalFormat, format, type) {
   const status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
   if (status != gl.FRAMEBUFFER_COMPLETE) return false;
   return true;
-}
-
-
-function downloadURI(filename, uri) {
-  let link = document.createElement("a");
-  link.download = filename;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
 }
 
 function isMobile() {
@@ -1404,6 +1395,11 @@ canvas.addEventListener("mousedown", () => {
   pointers[0].color = generateColor();
 });
 
+canvas.addEventListener("mouseenter", () => {
+  pointers[0].down = true;
+  pointers[0].color = generateColor();
+});
+
 canvas.addEventListener('touchstart', e => {
     e.preventDefault();
     const touches = e.targetTouches;
@@ -1419,9 +1415,9 @@ canvas.addEventListener('touchstart', e => {
     }
 });
 
-/* window.addEventListener('mouseup', () => {
-    pointers[0].down = false;
-}); */
+//  window.addEventListener('mouseup', () => {
+//     pointers[0].down = false;
+// }); 
 /* 
 window.addEventListener('touchend', e => {
     const touches = e.changedTouches;
@@ -1507,3 +1503,5 @@ function getTextureScale(texture, width, height) {
     y: height / texture.height
   };
 }
+
+
