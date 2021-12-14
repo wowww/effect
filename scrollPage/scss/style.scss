@@ -1,3 +1,11 @@
 @import 'reset';
 @import 'mouseEffect';
+@import 'parallax';
 
+#wrap {
+  .contents {
+    z-index: 1;
+    position: relative;
+    background-color: #fff;
+  }
+}
