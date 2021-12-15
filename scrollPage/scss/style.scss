@@ -1,11 +1,49 @@
 @import 'reset';
 @import 'mouseEffect';
-@import 'parallax';
+// @import 'parallax';
+
+$white: #fff;
 
 #wrap {
-  .contents {
-    z-index: 1;
+  width: 100%;
+  height: 100%;
+  
+  #page {
+    width: 100%;
+    height: 100vh;
     position: relative;
-    background-color: #fff;
+    
+    main {
+      z-index: 2;
+      position: absolute;
+      h1 {
+        color: $white;
+      }
+    }
+
+    section {
+      position: absolute;
+      top:100%;
+      h2 {
+        color: $white;
+      }
+
+      .block {
+        width: 100%;
+        height: 100%;
+      }
+      
+    }
+    
+    $boxes: 2;
+    @for $i from 1 through $boxes {
+      .block:nth-child( #{$i} ) {
+        top: ( calc( #{$i} * 100% ) );
+      }
+    }
+
   }
+
+  
 }
+
