@@ -1,0 +1,51 @@
+body {width: 100;height: auto;background-color: #000;}
+
+* {
+  box-sizing: border-box;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+
+  main, 
+  section {
+    width: auto;height: auto;position: absolute;left: 50%;transform: translateX(-50%)
+  }
+
+  h1, 
+  h2 {
+    color: #fff;
+  }
+
+  main {
+    top: 50%;
+  }
+
+  section {
+    
+    &:nth-child(2) {
+      top: 150%;
+    }
+    &:nth-child(3) {
+      top: 250%;
+    }
+    &:nth-child(4) {
+      top: 350%;
+    }
+  }
+  .canvas-wrapper {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    canvas {
+      width: 100%;height: 100%;
+    }
+  }
+}
