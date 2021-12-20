@@ -9,11 +9,19 @@ window.addEventListener('resize', function() {
 })
 
 const mouse = {
-  x: null,
-  y: null,
+  x: undefined,
+  y: undefined,
 }
 
 canvas.addEventListener('click', function(event) {
+  mouse.x = event.x;
+  mouse.y = event.y;
+  console.log(event)
+
+  drawCircle();
+})
+
+canvas.addEventListener('mousemove', function(event) {
   mouse.x = event.x;
   mouse.y = event.y;
   console.log(event)
