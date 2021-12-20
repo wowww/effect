@@ -16,27 +16,27 @@ const mouse = {
 canvas.addEventListener('click', function(event) {
   mouse.x = event.x;
   mouse.y = event.y;
-  console.log(event)
 
-  drawCircle();
 })
 
 canvas.addEventListener('mousemove', function(event) {
   mouse.x = event.x;
   mouse.y = event.y;
-  console.log(event)
 
-  drawCircle();
 })
 
 function drawCircle() {
   ctx.fillStyle = 'blue';
-  ctx.strokeStyle = 'red';
   ctx.lineWidth = 5;
   ctx.beginPath();
   ctx.arc(mouse.x, mouse.y, 50, 0, Math.PI * 2)
   ctx.fill();
-  ctx.stroke();
 }
 
-drawCircle();
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawCircle();
+  requestAnimationFrame(animate);
+}
+
+animate();
